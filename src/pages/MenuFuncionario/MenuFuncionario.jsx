@@ -29,9 +29,17 @@ const MenuFuncionario = () => {
               <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/produtos">
                 Produtos
               </a>
+
+              <Link
+              to="/produtos"
+              className={`nav-link ${style.itemMenu}`}
+              >
+              Produtos 
+              </Link>
             </li>
             <li className="nav-item">
-              <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/categorias">
+              <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/categorias"
+              >
                 Categorias
               </a>
             </li>
