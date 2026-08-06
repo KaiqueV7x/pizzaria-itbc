@@ -1,14 +1,18 @@
 import style from "./MenuFuncionario.module.css" 
-
+import { Link } from "react-router-dom"
 
 const MenuFuncionario = () => {
 
     return (
         <div>
-              <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${style.menu}`}>
-        <a className={`navbar-brand ${style.logo}`} href="/pizzaria/funcionario/home">
-          Home
-        </a>
+        <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${style.menu}`}>
+
+        <Link
+          to="/home"
+          className={`navbar-brand ${styles.logo}`}
+          >
+            Home
+        </Link>
 
         {/* Botão Hamburguer para telas menores */}
         <button
@@ -26,10 +30,6 @@ const MenuFuncionario = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto">
             <li className="nav-item active">
-              <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/produtos">
-                Produtos
-              </a>
-
               <Link
               to="/produtos"
               className={`nav-link ${style.itemMenu}`}
@@ -37,17 +37,23 @@ const MenuFuncionario = () => {
               Produtos 
               </Link>
             </li>
-            <li className="nav-item">
-              <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/categorias"
+            <li className="nav-item active">
+              <Link
+              to="/categorias"
+              className={`nav-link ${style.itemMenu}`}
               >
-                Categorias
-              </a>
+              Categorias
+              </Link>
             </li>
-            <li className="nav-item">
-              <a className={`nav-link ${style.itemMenu}`} href="/pizzaria/funcionario/estoques">
-                Estoque
-              </a>
+            <li className="nav-item active">
+              <Link
+              to="/estoques"
+              className={`nav-link ${style.itemMenu}`}
+              >
+              Estoque
+              </Link>
             </li>
+            
 
             {/* Dropdown Menu */}
             <li className="nav-item dropdown">

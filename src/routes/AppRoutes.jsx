@@ -27,18 +27,13 @@ const AppRoutes = () =>{
              />
 
              <Route
-              path="/pizzaria/funcionario/home"
+              path="/home"
               element={<HomeFuncionario/>}
              />
 
              <Route
-              path="/pizzaria/funcionario/produtos"
+              path="/produtos"
               element={<ListarProduto/>}
-             />
-
-             <Route
-              path="/pizzaria/funcionario/categorias"
-              element={<ListarCategoria/>}
              />
 
           </Routes>
