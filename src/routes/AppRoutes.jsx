@@ -36,6 +36,11 @@ const AppRoutes = () =>{
               element={<ListarProduto/>}
              />
 
+             <Route
+              path="/categorias"
+              element={<ListarCategoria/>}
+             />
+
           </Routes>
           
      </HashRouter>

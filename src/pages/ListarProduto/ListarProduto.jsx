@@ -1,7 +1,53 @@
+import React, {useState, useEffect} from "react"
+
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
+import api from "../../services/api"
 
 
 const ListarProduto = () => {
+
+// useState: é um hook do React que serve para armazenar e controlar o estado de um componente (variáveis)
+//          ele permite que você delcare variáveis que lembrar valores entres renderizações do componente
+
+// Composição const [nome da variável, função para alterar o valor da variável] = (valor inicial da variável)
+// Exemplo: Quero declarar uma variável numero cujo valor inicie com 0
+// const [numero, setNumero] = useState(0)
+// Para nosso aplicativo, preciso de uma array de produtos iniciando com um array vazio
+// Por Quê ??? O objetivo é que esse array seja preenchido com os produtos que vem da API - BACK - END
+//                      no momento em que a página for "carregada"
+
+
+const [produtos, setProdutos] = useState([])
+
+// useEffect: é um hook do React que serve para executar cógios que ficam fora do controle direto da renderização
+// visual, os chamaodos "efeitos colaterais"
+// Exemplo: buscar dados de uma API, configurar cronômetros, fazer algo quando o usuário aperta uma tecla,
+//          aplicar o Modo Escuro na página
+
+// Em nossa página, vamos utilizar para acessar a API-BACK END e carregar nossa tabela de protudos toda vez
+// que a página for carregada.
+
+// useEffect( função que será executada, [quando esse valor for alterado a função é chamada novamente])
+// Obs: [] manter vazio, quando você quiser que o seu cógico rode exatamente uma única vez, logo após o componente
+// aparecer na tela pela primeira vez
+// Resumindo [] : Execute isso quando a página carregar e depois "ignore", não importa o que mude na tela!
+
+
+useEffect(()=>{
+
+  api
+    .get("/produtos")
+    .then((response)=>{
+      // deu certo ;)
+      console.log(response.data.data)
+      setProdutos(response.data.data)
+    })
+    .catch((error)=>{
+      // deu ruim :(
+      console.error("Erro ao buscar a lista de produtos. ", error)
+    })
+
+},[])
 
 const arrayProdutos = [
 
