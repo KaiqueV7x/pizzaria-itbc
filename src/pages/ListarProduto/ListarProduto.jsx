@@ -35,54 +35,55 @@ const arrayProdutos = [
         <div className="container">
             <MenuFuncionario/>
 
-            
-
             <div className="table-responsive">
-            <table className="table table-bordered table-striped table-hover">
-            <thead className="table-sucess">
-            <tr>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Descrição</th>
-            <th>Ações</th> {/* Nova coluna de Ações */}
-            </tr>
-            </thead>
-            <tbody>
+  <table className="table table-bordered table-striped table-hover">
+    <thead className="table-sucess">
+      <tr>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Descrição</th>
+        <th>Ações</th> {/*Nova coluna de Ações */} 
+      </tr>
+    </thead>
 
-            {arrayProdutos.map((produto)=> (
-            <tr>
-            <td style={{ fontSize: "13px" }}></td>
-            <td style={{ fontSize: "13px" }}>
-                {
-                    new Intl.NumberFormat("pt-BR", {
+    <tbody>
 
-                    }
-                    )
-                }
+    { arrayProdutos.map((produto) => (
 
-            </td>
-            <td style={{ fontSize: "13px" }}></td>
-            <td className="text-center fs-6" style={{ width: "100px" }}>
-            {/* Botão de Editar */}
-            <button
-            className="btn btn-sm btn-primary me-2">
-            <i className="fas fa-pencil-alt"></i>{" "}
-            {/* Ícone de editar */}
-            </button>
-            {/* Botão de Excluir */}
-            <button
-            className="btn btn-sm btn-danger">
-            <i className="fas fa-trash-alt"></i>{" "}
-            {/* Ícone de excluir */}
-            </button>
-            </td>
-            </tr>
+        <tr>
+        <td style={{ fontSize: "13px" }}> {produto.nome}</td>
 
-            ))}
+        <td style={{ fontSize: "13px" }}></td>
+        {
+            new Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            }).format(produto.precoVenda)
+        }
 
-            </tbody>
-            </table>
-            </div>
+        <td style={{ fontSize: "13px" }}> {produto.descricao}</td>
+
+        <td className="text-center" style={{ width: "100px" }}>
+          {/* Botão Editar */}
+          <button className="btn btn-sm btn-primary me-2">
+            <i className="fas fa-pencil-alt"></i>
+          </button>
+
+          {/* Botão Excluir */}
+          <button className="btn btn-sm btn-danger">
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+
+
+     ))}
+
+
+      
+    </tbody>
+  </table>
+</div>
 
         </div>
     )
