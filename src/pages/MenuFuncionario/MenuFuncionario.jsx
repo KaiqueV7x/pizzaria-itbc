@@ -1,11 +1,12 @@
-import style from "./MenuFuncionario.module.css" 
+import styles from './MenuFuncionario.module.css'; 
 import { Link } from "react-router-dom"
+
 
 const MenuFuncionario = () => {
 
     return (
         <div>
-        <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${style.menu}`}>
+        <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${styles.menu}`}>
 
         <Link
           to="/home"
@@ -32,7 +33,7 @@ const MenuFuncionario = () => {
             <li className="nav-item active">
               <Link
               to="/produtos"
-              className={`nav-link ${style.itemMenu}`}
+              className={`nav-link ${styles.itemMenu}`}
               >
               Produtos 
               </Link>
@@ -40,7 +41,7 @@ const MenuFuncionario = () => {
             <li className="nav-item active">
               <Link
               to="/categorias"
-              className={`nav-link ${style.itemMenu}`}
+              className={`nav-link ${styles.itemMenu}`}
               >
               Categorias
               </Link>
@@ -48,13 +49,12 @@ const MenuFuncionario = () => {
             <li className="nav-item active">
               <Link
               to="/estoques"
-              className={`nav-link ${style.itemMenu}`}
+              className={`nav-link ${styles.itemMenu}`}
               >
               Estoque
               </Link>
             </li>
             
-
             {/* Dropdown Menu */}
             <li className="nav-item dropdown">
               <a
