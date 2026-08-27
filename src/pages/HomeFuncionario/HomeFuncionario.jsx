@@ -1,3 +1,4 @@
+import CredentialUser from "../../componentes/CredentialUser"
 import MenuFuncionario from "../MenuFuncionario/MenuFuncionario"
 
 const HomeFuncionario = () => {
